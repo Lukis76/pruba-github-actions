@@ -1,0 +1,21 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  hello_world:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          sparse-checkout: .
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: npm ci
+      - name: Linting
+        run: npm run lint
