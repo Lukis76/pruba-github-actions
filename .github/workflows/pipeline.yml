@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      
+
 jobs:
   hello_world:
     runs-on: ubuntu-22.04
@@ -16,7 +16,9 @@ jobs:
         with:
           node-version: 18
       - name: Install Dependencies
-        run: npm i
-      - run: ls -a
+        run: npm ci --no-audit --no-fund --no-optional
+      # - run: ls -a
       - name: Linting
         run: npm run lint
+      - name: Building
+        run: npm run build
