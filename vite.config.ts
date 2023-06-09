@@ -10,3 +10,4 @@ export default defineConfig({
     environment: 'happy-dom', // or 'jsdom', 'node'
   },
 })
+  
