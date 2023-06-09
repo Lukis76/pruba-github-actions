@@ -16,6 +16,6 @@ jobs:
         with:
           node-version: 18
       - name: Install Dependencies
-        run: npm ci
+        run: npm i
       - name: Linting
         run: npm run lint
